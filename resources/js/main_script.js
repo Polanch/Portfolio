@@ -68,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Track current position of each card (0, 1, 2)
     let positions = [0, 1, 2];
+    let animationsComplete = 0;
     
     // Apply state to a card
     function applyState(card, stateIndex) {
@@ -86,10 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Initialize carousel - apply starting states and add click handlers
+    // Wait for each card's animation to finish
     pfpHolders.forEach((card, index) => {
-        applyState(card, positions[index]);
-        card.addEventListener('click', cycleCarousel);
+        card.addEventListener('animationend', () => {
+            card.style.animation = 'none';
+            applyState(card, positions[index]);
+            card.addEventListener('click', cycleCarousel);
+        }, { once: true });
     });
 });
 
