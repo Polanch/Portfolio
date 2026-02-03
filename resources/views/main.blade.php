@@ -20,52 +20,52 @@
                 <li><a href="" class="swap-text">contact</a></li>
             </ul>
             <div class="top-toggles">
-                <button class="toggle-btn"><img src="/images/chatbot.png" class="app-mode"></button>
-                <button class="toggle-btn"><img src="/images/night.png" class="app-mode"></button>
+                <button class="toggle-btn"><img src="/images/chatbot.png" class="app-mode" loading="lazy"></button>
+                <button class="toggle-btn"><img src="/images/night.png" class="app-mode" loading="lazy"></button>
             </div> 
         </div>
         <div class="sub-container-1">
             <div class="s1-box">
                 <div class="intro">
                     <h1>hi polanch here</h1>
-                    <img src="/images/happy.gif" id="chibi">
+                    <img src="/images/happy.gif" id="chibi" loading="lazy">
                 </div>
                 <p>24yo Web Developer from Philippines 
-                    <img src="/images/ph.png" id="phicn">
+                    <img src="/images/ph.png" id="phicn" loading="lazy">
                 </p>
                 <p>I'm a freelancer actively looking for clients and startup teams to work with</p>
                 <div class="midtro">
                     <p>For Q&A, start chat with PolanchBot <a href="" id="chatbot-link">
-                        <img src="/images/arrow.png" id="arrowicn">
+                        <img src="/images/arrow.png" id="arrowicn" loading="lazy">
                     </a></p>
                     <p>For further inquiries, message me <a href="">here</a>instead</p>
                 </div>
                 <div class="outro">
                     <button class="resume-download">
                         <a href="/downloadable_files/John Lloyd Olipani - Activity.pdf" download>Resume 
-                            <img src="/images/blank-page.png" class="intro-icn">
+                            <img src="/images/blank-page.png" class="intro-icn" loading="lazy">
                         </a>
                     </button>
                     <a href="">
-                        <img src="/images/linkedin.png" class="intro-icn">
+                        <img src="/images/linkedin.png" class="intro-icn" loading="lazy">
                     </a>
                     <a href="">
-                        <img src="/images/github.png" class="intro-icn">
+                        <img src="/images/github.png" class="intro-icn" loading="lazy">
                     </a>
                     <a href="">
-                        <img src="/images/mail.png" class="intro-icn">
+                        <img src="/images/mail.png" class="intro-icn" loading="lazy">
                     </a>
                 </div>
             </div>
             <div class="s1-box">
                 <div class="pfp-holder">
-                            <img src="/images/pfp2.jpg" class="pfp">
+                            <img src="/images/pfp2.jpg" class="pfp" loading="lazy">
                 </div>
                 <div class="pfp-holder">
-                            <img src="/images/pfp3.jpg" class="pfp">
+                            <img src="/images/pfp3.jpg" class="pfp" loading="lazy">
                 </div>
                 <div class="pfp-holder">
-                            <img src="/images/pfp1.jpg" class="pfp">
+                            <img src="/images/pfp1.jpg" class="pfp" loading="lazy">
                 </div>
             </div>
         </div>
@@ -81,7 +81,7 @@
                         <div class="timeline">
                             <div class="timeline-item">
                                 <div class="timeline-logo">
-                                    <img src="/images/csu-logo.png" alt="CSU">
+                                    <img src="/images/csu-logo.png" alt="CSU" loading="lazy">
                                 </div>
                                 <div class="timeline-content">
                                     <div class="timeline-header">
@@ -97,7 +97,7 @@
                             </div>
                             <div class="timeline-item">
                                 <div class="timeline-logo">
-                                    <img src="/images/eksperto-logo.png" alt="Eksperto">
+                                    <img src="/images/eksperto-logo.png" alt="Eksperto" loading="lazy">
                                 </div>
                                 <div class="timeline-content">
                                     <div class="timeline-header">
@@ -114,7 +114,7 @@
                             </div>
                             <div class="timeline-item">
                                 <div class="timeline-logo">
-                                    <img src="/images/cec-logo.png" alt="CAGELCO">
+                                    <img src="/images/cec-logo.png" alt="CAGELCO" loading="lazy">
                                 </div>
                                 <div class="timeline-content">
                                     <div class="timeline-header">
@@ -133,7 +133,7 @@
                         <div class="timeline">
                             <div class="timeline-item">
                                 <div class="timeline-logo">
-                                    <img src="/images/csu-logo.png" alt="CSU">
+                                    <img src="/images/csu-logo.png" alt="CSU" loading="lazy">
                                 </div>
                                 <div class="timeline-content">
                                     <div class="timeline-header">
@@ -146,7 +146,7 @@
                             </div>
                             <div class="timeline-item">
                                 <div class="timeline-logo">
-                                    <img src="/images/ama-logo.png" alt="AMA">
+                                    <img src="/images/ama-logo.png" alt="AMA" loading="lazy">
                                 </div>
                                 <div class="timeline-content">
                                     <div class="timeline-header">
@@ -159,7 +159,7 @@
                             </div>
                             <div class="timeline-item">
                                 <div class="timeline-logo">
-                                    <img src="/images/stpaul-logo.png" alt="St. Paul">
+                                    <img src="/images/stpaul-logo.png" alt="St. Paul" loading="lazy">
                                 </div>
                                 <div class="timeline-content">
                                     <div class="timeline-header">
