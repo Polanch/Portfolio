@@ -1,29 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>John Lloyd Olipani</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-</head>
-    @vite('resources/css/main_style.css')
-<body>
+@extends('layouts.main_layout')
+
+@section('content')
     <div class="main-container">
-        <div class="top-nav">
-            <ul class="nav-links">
-                <li><a href="" class="swap-text">home</a></li>
-                <li><a href="" class="swap-text">blogs</a></li>
-                <li><a href="" class="swap-text">projects</a></li>
-                <li><a href="" class="swap-text">contact</a></li>
-            </ul>
-            <div class="top-toggles">
-                <button class="toggle-btn"><img src="/images/chatbot.png" class="app-mode" loading="lazy"></button>
-                <button class="toggle-btn"><img src="/images/night.png" class="app-mode" loading="lazy"></button>
-            </div> 
-        </div>
         <div class="sub-container-1">
             <div class="s1-box">
                 <div class="intro">
@@ -164,12 +142,10 @@
                                 <div class="timeline-content">
                                     <div class="timeline-header">
                                         <h3>St. Paul School of Aparri</h3>
-                                        <span class="timeline-date">K-12</span>
+                                        <span class="timeline-date">2014-2020</span>
                                     </div>
                                     <p class="timeline-role">GAS Curriculum</p>
                                     <p class="timeline-location">Cagayan, PH</p>
-                                </div>
-                            </div>
                                 </div>
                             </div>
                         </div>
@@ -178,10 +154,88 @@
             </div>
         </div>
         <div class="sub-container-3">
-            
+            <div class="s3-box">
+                <h1>featured projects</h1>
+                <a href="">view more <img src="/images/arrow.png" id="more-right"></a>
+            </div>
+            <div class="s3-content">
+                <div class="project-card">
+                    <img src="/project_thumbnails/cics1.webp" class="project-image" alt="Project 1" data-slideshow="cics">
+                    <h3>Student Portal</h3>
+                    <p class="project-description">Working with the Eksperto team, I was tasked to create the student portal for Cagayan State University, CICS department.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag"><img src="/images/kit1.png" class="tech-icon"> Laravel</span>
+                        <span class="tech-tag"><img src="/images/kit5.png" class="tech-icon"> CSS</span>
+                        <span class="tech-tag"><img src="/images/kit9.png" class="tech-icon"> Javascript</span>
+                        <span class="tech-tag"><img src="/images/kit4.png" class="tech-icon"> HTML5</span>
+                        <span class="tech-tag"><img src="/images/kit2.png" class="tech-icon"> mySQL</span>
+                        <span class="tech-tag"><img src="/images/kit8.png" class="tech-icon"> PHP</span>
+                        <span class="tech-tag"><img src="/images/kit3.png" class="tech-icon"> Node.js</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://cicsportal.csuaparri.net/" class="project-btn"><img src="/images/domain.png" class="btn-icon"> Website</a>
+                        <a href="" class="project-btn"><img src="/images/git.png" class="btn-icon"> Source</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/project_thumbnails/yameT1.webp" class="project-image" alt="Project 2" data-slideshow="yame">
+                    <h3>Wholesale System for Tshirt Business</h3>
+                    <p class="project-description">This was made within a day as a challenge and I intend not to fix any bug as this is my badge and record of my limits.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag"><img src="/images/kit1.png" class="tech-icon"> Laravel</span>
+                        <span class="tech-tag"><img src="/images/kit11.png" class="tech-icon"> PostgreSQL</span>
+                        <span class="tech-tag"><img src="/images/kit9.png" class="tech-icon"> Javascript</span>
+                        <span class="tech-tag"><img src="/images/kit4.png" class="tech-icon"> HTML5</span>
+                        <span class="tech-tag"><img src="/images/kit5.png" class="tech-icon"> CSS</span>
+                        <span class="tech-tag"><img src="/images/kit3.png" class="tech-icon"> Node.js</span>
+                        <span class="tech-tag"><img src="/images/kit10.png" class="tech-icon"> Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://yametshirt-shopdemo.onrender.com/" class="project-btn"><img src="/images/domain.png" class="btn-icon"> Website</a>
+                        <a href="" class="project-btn"><img src="/images/git.png" class="btn-icon"> Source</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-container-4">
+            <div class="s4-box">
+                <h1>recent posts</h1>
+                <a href="/blogs">view more <img src="/images/arrow.png" id="more-right-2"></a>
+            </div>
+            <div class="s4-content">
+                <div class="blog-card">
+                    <div class="blog-header">
+                        <h3>Blog Post Title</h3>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 January 1, 2026</span>
+                            <span class="blog-read">⏱️ 5 min read</span>
+                            <span class="blog-views">👁️ 0 views</span>
+                        </div>
+                    </div>
+                    <p class="blog-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Tag1</span>
+                        <span class="blog-tag">Tag2</span>
+                        <span class="blog-tag">Tag3</span>
+                    </div>
+                </div>
+                <div class="blog-card">
+                    <div class="blog-header">
+                        <h3>Blog Post Title</h3>
+                        <div class="blog-meta">
+                            <span class="blog-date">📅 January 1, 2026</span>
+                            <span class="blog-read">⏱️ 5 min read</span>
+                            <span class="blog-views">👁️ 0 views</span>
+                        </div>
+                    </div>
+                    <p class="blog-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="blog-tags">
+                        <span class="blog-tag">Tag1</span>
+                        <span class="blog-tag">Tag2</span>
+                        <span class="blog-tag">Tag3</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
-    @vite('resources/js/main_script.js')
-</body>
-</html>
+@endsection

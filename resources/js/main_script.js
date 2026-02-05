@@ -61,9 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Define the rotation/position states for each position in the stack
     const states = [
-        { transform: 'rotate(10deg) translateX(20px)', zIndex: 1 },   // Back right
-        { transform: 'rotate(0deg) translateX(0px)', zIndex: 2 },     // Middle
-        { transform: 'rotate(-10deg) translateX(-20px)', zIndex: 3 }  // Front left
+        { transform: 'rotate(10deg) translateX(20px) translateZ(0px)', zIndex: 1 },   // Back right
+        { transform: 'rotate(0deg) translateX(0px) translateZ(0px)', zIndex: 2 },     // Middle
+        { transform: 'rotate(-10deg) translateX(-20px) translateZ(0px)', zIndex: 3 }  // Front left
     ];
     
     // Track current position of each card (0, 1, 2)
@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyState(card, stateIndex) {
         card.style.transform = states[stateIndex].transform;
         card.style.zIndex = states[stateIndex].zIndex;
+        card.style.opacity = '1'; // Ensure carousel items are visible
     }
     
     // Cycle the carousel - move front card to back
@@ -89,19 +90,17 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Wait for each card's animation to finish
     pfpHolders.forEach((card, index) => {
-        card.addEventListener('animationend', () => {
-            card.style.animation = 'none';
-            applyState(card, positions[index]);
-            card.addEventListener('click', cycleCarousel);
-        }, { once: true });
+        card.addEventListener('click', cycleCarousel);
     });
 });
 
-// Scroll reveal for timeline items and sub-containers
+// Scroll reveal for timeline items, sub-containers, project cards, and blog cards
 document.addEventListener('DOMContentLoaded', () => {
     const timelineItems = document.querySelectorAll('.timeline-item');
     const subContainer1 = document.querySelector('.sub-container-1');
     const subContainer2 = document.querySelector('.sub-container-2');
+    const projectCards = document.querySelectorAll('.project-card');
+    const blogCards = document.querySelectorAll('.blog-card');
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -112,12 +111,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.2,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px 0px 0px'
     });
     
     timelineItems.forEach(item => {
         observer.observe(item);
+    });
+    
+    projectCards.forEach(card => {
+        observer.observe(card);
+    });
+    
+    blogCards.forEach(card => {
+        observer.observe(card);
     });
     
     if (subContainer1) {
@@ -127,4 +134,54 @@ document.addEventListener('DOMContentLoaded', () => {
     if (subContainer2) {
         observer.observe(subContainer2);
     }
+});
+
+// Project slideshow
+document.addEventListener('DOMContentLoaded', () => {
+    const slideshows = {
+        cics: ['/project_thumbnails/cics1.webp', '/project_thumbnails/cics2.webp', '/project_thumbnails/cics3.webp'],
+        yame: ['/project_thumbnails/yameT1.webp', '/project_thumbnails/yameT2.webp', '/project_thumbnails/yameT3.webp']
+    };
+    
+    const slideshowDelays = {
+        cics: 4000,  // Start first change at 4s
+        yame: 2000   // Start first change at 2s (offset for unbalanced timing)
+    };
+    
+    const images = document.querySelectorAll('[data-slideshow]');
+    
+    images.forEach(img => {
+        const slideshowName = img.dataset.slideshow;
+        const imageList = slideshows[slideshowName];
+        const initialDelay = slideshowDelays[slideshowName] || 5000;
+        
+        if (imageList && imageList.length > 1) {
+            let currentIndex = 0;
+            
+            // Set initial delayed start
+            setTimeout(() => {
+                // First change
+                currentIndex = (currentIndex + 1) % imageList.length;
+                img.style.transition = 'opacity 0.3s ease';
+                img.style.opacity = '0.5';
+                
+                setTimeout(() => {
+                    img.src = imageList[currentIndex];
+                    img.style.opacity = '1';
+                }, 150);
+                
+                // Then set regular interval for subsequent changes
+                setInterval(() => {
+                    currentIndex = (currentIndex + 1) % imageList.length;
+                    img.style.transition = 'opacity 0.3s ease';
+                    img.style.opacity = '0.5';
+                    
+                    setTimeout(() => {
+                        img.src = imageList[currentIndex];
+                        img.style.opacity = '1';
+                    }, 150);
+                }, 5000);
+            }, initialDelay);
+        }
+    });
 });
