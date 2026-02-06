@@ -1020,6 +1020,8 @@ body.dark-mode .s3-box a:hover{
     border: 1px solid #e0e0e0;
 }
 
+/*chat bot*/
+
 /* Dark mode for blog cards */
 body.dark-mode .blog-card{
     background: #1a1a1a;
@@ -1341,5 +1343,96 @@ body.dark-mode .footer a:hover{
     
     .s4-content{
         grid-template-columns: 1fr;
+    }
+}
+
+/* Chatbot Widget Styles */
+.chatbot-widget {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 1000;
+    max-width: 350px;
+    width: 100%;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+     height: 70px;
+    transition: height 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+.chatbot-widget.active {
+    height: 340px;
+}
+.chatbot-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    cursor: pointer;
+}
+.chatbot-toggle-btn {
+    display: none;
+}
+.chatbot-body {
+    flex: 1;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+}
+.chatbot-messages {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: #fafafa;
+}
+.chatbot-input-row {
+    padding: 12px 16px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 8px;
+    background: #fff;
+}
+.chatbot-input-row input {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background: #fafafa;
+    outline: none;
+    transition: border-color 0.2s;
+}
+.chatbot-input-row input:focus {
+    border-color: #222;
+}
+.chatbot-input-row button {
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+.chatbot-input-row button:hover {
+    background: #444;
+}
+@media (max-width: 600px) {
+    .chatbot-widget {
+        right: 8px;
+        bottom: 8px;
+        max-width: 98vw;
+    }
+    .chatbot-widget.active {
+        height: 60vh;
     }
 }
